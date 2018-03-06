@@ -1,0 +1,97 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "scorecard"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+         "../Content/css/claimsphere.css",
+         "../Content/lib/font-awesome/css/font-awesome.min.css",
+        "styles.css"
+      ],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js",
+       "../Content/lib/Dynatree/jquery-ui.custom.js",
+        "../content/lib/Dynatree/jquery.dynatree.js",
+        "../Content/lib/jquery-sparkline/jquery.sparkline.js",  
+        "../Content/lib/JQWidgets/jqxcore.js",
+        "../Content/lib/JQWidgets/jqxbuttons.js",
+        "../Content/lib/JQWidgets/jqxdata.js" ,                         
+        "../Content/lib/JQWidgets/jqxscrollbar.js",
+        "../Content/lib/JQWidgets/jqxmenu.js",
+        "../Content/lib/JQWidgets/jqxlistbox.js",
+        "../Content/lib/JQWidgets/jqxdropdownlist.js",
+        "../Content/lib/JQWidgets/jqxgrid.js",
+        "../Content/lib/JQWidgets/jqxgrid.grouping.js",
+        "../Content/lib/JQWidgets/jqxgrid.selection.js",
+        "../Content/lib/JQWidgets/jqxgrid.sort.js",
+        "../Content/lib/JQWidgets/jqxgrid.filter.js",
+        "../Content/lib/JQWidgets/jqxpanel.js",
+        "../Content/lib/JQWidgets/jqxgrid.pager.js",
+        "../Content/lib/JQWidgets/jqxgrid.columnsresize.js",
+        "../Content/lib/JQWidgets/jqxdragdrop.js",
+        "../Content/lib/JQWidgets/jqxtree.js",
+        "../Content/lib/JQWidgets/jqxdatetimeinput.js",
+        "../Content/lib/JQWidgets/jqxcalendar.js",
+        "../Content/lib/JQWidgets/jqxgrid.columnsreorder.js",
+        "../Content/lib/JQWidgets/jqxgrid.edit.js",
+        "../Content/lib/JQWidgets/jqxgrid.storage.js",
+        "../Content/lib/JQWidgets/jqxnumberinput.js",
+        "../Content/lib/JQWidgets/jqxcheckbox.js",
+        "../Content/lib/JQWidgets/jqxgrid.export.js",
+        "../Content/lib/JQWidgets/jqxdata.export.js",
+        "../Content/lib/JQWidgets/jqxwindow.js",
+        "../Content/lib/JQWidgets/jqxswitchbutton.js",
+        "../Content/lib/JQWidgets/jqxinput.js",
+        "../content/lib/jquery-easy-pie-chart/jquery-easy-pie-chart.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}
