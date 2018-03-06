@@ -1,0 +1,8 @@
+﻿<div class="col-lg-12">
+    <div id="exportExcel" name="exportExcel" (click)="exportExcel()" title="Export Excel" class="btn btn-success exportExcel"><i class="fa fa-file-excel-o" aria-hidden="true"></i></div>
+    <jqxgrid-caregap-compliance (output_caregap)="output_caregap($event)"></jqxgrid-caregap-compliance>
+</div>
+   <!--Error Handling-->
+<div class="text-center red" *ngIf="serverError">
+    <strong>{{serverErrorMsg}}</strong>
+</div>

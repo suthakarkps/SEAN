@@ -1,0 +1,10 @@
+﻿<div>
+    <ul class="breadcrumb">
+        <li> <a role="button" href="../"><i class="fa fa-home fa-2x"></i></a></li>
+        <!--<li> <a role="button" [routerLink]="['/']">HEDIS</a></li>-->
+        <li *ngFor="let level of breadcrumbLevel(); let last = last; let i = index" [ngClass]="{'active': last}">
+            <a role="button" *ngIf="!last" (click)="navigateTo(i)">{{breadcrumbName(level)}}</a>
+            <span> <span *ngIf="last">{{breadcrumbName(level)}}</span></span>            
+        </li>            
+    </ul>
+</div> 

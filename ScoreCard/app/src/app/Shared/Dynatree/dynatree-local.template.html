@@ -1,0 +1,7 @@
+﻿<div class="dynatree-container">
+    <button (click)="dropdown()"><span [attr.title]="dynatreeValue"> {{dynatreeValue}} </span><i class="fa" [ngClass]="toggleArrow"></i></button>
+    <div class="tree-container" [style.display]="showtree">
+        <div class="tree-start"></div>
+    </div>
+</div>
+

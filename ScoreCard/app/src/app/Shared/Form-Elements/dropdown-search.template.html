@@ -1,0 +1,17 @@
+﻿<div class="dropdown-search">
+    <button (click)="dropdown()"><span [attr.title]="dropdownValue"> {{dropdownValue}} </span><i class="fa" [ngClass]="toggleArrow"></i></button>
+    <div *ngIf="enableOptions">
+        <input #box type="text" placeholder="Search" [(ngModel)]="searchkey" (keyup)="search(box.value)" />
+        <ul>
+            <li *ngFor="let option of dropdownOptions | dropdownSearchFilter:searchkey:displayname; let i = index" [ngClass]="{active: i===tickPosition}" (click)="selectOption(option)">
+                {{option[displayname]}}
+                <span *ngIf="i==tickPosition">
+                    <i class="fa fa-check" *ngIf="{}">
+                    </i>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+

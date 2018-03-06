@@ -1,0 +1,28 @@
+<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12 xs-list">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 dashboardList" *ngFor='let dashboardList of dashboardLists'>
+        <div class="panel panel-style1 no-padding" (click)="next(dashboardList.ProductID, dashboardList.Name)">
+            <div class="panel-heading">{{dashboardList.Name}}</div>
+            <div class="panel-body">
+                <span [ngClass]="'icon-'+dashboardList.Img"></span>                
+                <span *ngIf="dashboardList.name != 'HEDIS Compliance'" class="beta-text">Beta</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center red" *ngIf="serverError">
+        <strong>{{serverErrorMsg}}</strong>
+    </div>
+</div>
+<div class="spin-main" *ngIf="spinner">
+    <div class="spin-rect spin-rect1"></div>
+    <div class="spin-rect spin-rect2"></div>
+    <div class="spin-rect spin-rect3"></div>
+    <div class="spin-rect spin-rect4"></div>
+    <div class="spin-rect spin-rect5"></div>
+</div>
+
+
+
+
+
+

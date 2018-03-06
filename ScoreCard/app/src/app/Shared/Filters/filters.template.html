@@ -1,0 +1,30 @@
+﻿<div [@enableFilter]="state"  class="filter-component">
+    <div class="filter-icon" (click)="toggleState()"><i class="fa fa-filter fa-lg" aria-hidden="true"></i></div>
+    <div *ngIf="!serverError" class="filter-content">
+        <div class="filter-heading">Filters</div>
+        <div>
+            <h3>Submission</h3>
+            <dropdown-search *ngIf="SubmissionOptions" [options]="SubmissionOptions" [operationName]="SubmissionID" [displayname]="SubmissionName" (output)="output_Submission($event)"></dropdown-search>
+        </div>
+        <!--<div>
+            <label-message [option]="reportingProduct"></label-message>                 
+        </div>-->
+        <div>
+            <h3>Product Type </h3>
+            <dropdown-search *ngIf="ProdTypeOptions" [options]="ProdTypeOptions" [operationName]="ProductTypeName" [displayname]="ProductTypeName" (output)="output_ProdType($event)"></dropdown-search>
+        </div>
+        <div>
+            <h3>Review Set</h3>
+            <dynatree-local *ngIf="ReviewSetOptions" [options]="ReviewSetOptions" [displayParentName]="ReviewSetWorkflowName" [displayname]="ReviewSetRunDesc" [operationParentName]="ReviewSetWorkflowID" [operationName1]="ReviewSetRunDate" [operationName2]="ReviewSetTimePeriodID" (output)="output_ReviewSet($event)"></dynatree-local>
+            <!--<dropdown-search *ngIf="dropdown1" [options]="dropdown1" [operationName]="operationname1" [displayname]="displayname1" (output_dropdownValue)="output_dropdownValue1($event)"></dropdown-search>-->
+        </div>
+        <div>
+            <h3>Group/Provider</h3>
+            <dynatree *ngIf="dynatree" (output_dynatreeValue)="output_dynatreeValue($event)"></dynatree>
+        </div>      
+        <button type="button"  [disabled]="disableApplyBtn" class="btn btn-success pull-left" (click)="applyValues()">Apply</button>
+    </div>
+    <div class="text-center red" *ngIf="serverError">
+        <strong>{{serverErrorMsg}}</strong>
+    </div>    
+</div>

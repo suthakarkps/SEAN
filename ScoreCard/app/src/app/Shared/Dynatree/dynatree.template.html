@@ -1,0 +1,60 @@
+﻿<div class="dynatree-container">
+    <button (click)="dropdown()"><span [attr.title]="dynatreeValue"> {{dynatreeValue}} </span><i class="fa" [ngClass]="toggleArrow"></i></button>
+    <div class="tree-container" [style.display]="showtree">
+        <div class="input-group">
+            <input id="SearchPractice" class="form-control alphanumeric" type="text" placeholder="Search...">
+            <span class="input-group-btn">
+                <button class="btn btn-sm btn-primary" title="Search" type="button" (click)="SearchPractice()">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button class="btn btn-sm btn-primary" title="AdvanceSearch" type="button" (click)="AdvanceSearch()">
+                    <i class="fa fa-search-plus"></i>
+                </button>
+
+            </span>
+        </div>
+        <div class="tree-start"></div>
+
+        <div class="btn-container">
+            <button class="btn btn-xs btn-success" title="Ok" (click)="Load_content()">
+                <i class="fa fa-check"></i> <span>Select</span>
+            </button>
+            <button class="btn btn-xs btn-danger" title="Cancel" (click)="Cancel()">
+                <i class="fa fa-times"></i> <span>Cancel</span>
+            </button>
+        </div>
+        <!--<p class="pull-left" style="margin: 0 0 0">
+            <a href="javascript:void(0)" onclick="AdvSearch()">
+                <i class="fa fa-search-plus blue bigger-110"></i>
+                Advance Search
+            </a>
+            <i class="fa fa-filter text-muted" id="advfilter" style="display: none; cursor: pointer" title="Clear Filter" onclick="ClearSrch()"></i>
+        </p>-->
+    </div>
+    <!--ADVANCE SEARCH -->
+    <div class="advanceSearch col-xs-12" style="display: none">
+        <div class="col-xs-12">
+            <h5 class="lighter">
+                <i class="fa fa-search-plus"></i>
+                Advance Search
+            </h5>
+            <input type="text" id="adv_practice" placeholder="Enter Practice *">
+            <input type="text" id="adv_provider" placeholder="Enter Provider">
+        </div>
+        <div class="col-xs-12">
+            <div class="hr hr8 hr-double" style="margin: 8px 0 0;"></div>
+            <div class="advanceSearchBtns">
+                <button class="btn btn-xs btn-danger pull-right" title="Cancel" (click)="AdvanceSearchCancel()">
+                    <i class="fa fa-times"></i>
+                </button>
+                <button class="btn btn-xs btn-success pull-right" title="Search" (click)="AdvanceSearchResult()">
+                    <i class="fa fa-check"></i>
+                </button>
+                <button class="btn btn-xs btn-success pull-right" title="Clear Filter" (click)="ClearSearch()">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

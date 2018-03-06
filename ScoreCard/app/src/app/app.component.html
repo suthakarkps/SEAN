@@ -1,0 +1,22 @@
+<app-header></app-header>
+<breadcrumb-cs class="hidden-xs" (output_breadcrumb)="output_breadcrumb($event)" (display_level)="display_level($event)"></breadcrumb-cs>
+<selected-filters *ngIf="selectedFiltersOn" [refresh]="refreshSelectedFilters" class="col-lg-12"></selected-filters>
+<div *ngIf="level0">
+    <scorecard-level0 [style.display]="ShowLevel0" (output_level0)="output_level0($event)"></scorecard-level0>
+</div>
+<div *ngIf="level1">
+    <scorecard-level1 [style.display]="ShowLevel1" (output_level1)="output_level1($event)" (output_level1_filter)="output_level1_filter($event)"></scorecard-level1>
+</div>
+<div *ngIf="level2">
+    <scorecard-level2 [style.display]="ShowLevel2" (output_level2)="output_level2($event)"></scorecard-level2>
+</div>
+<div *ngIf="level3">
+    <scorecard-level3 [style.display]="ShowLevel3" (output_level3)="output_level3($event)"></scorecard-level3>
+</div>
+<div *ngIf="level4">
+    <scorecard-level4 [style.display]="ShowLevel4" (output_level4)="output_level4($event)"></scorecard-level4>
+</div>
+<div *ngIf="level5">
+    <scorecard-level5 [style.display]="ShowLevel5"></scorecard-level5>
+</div>
+<footer></footer>

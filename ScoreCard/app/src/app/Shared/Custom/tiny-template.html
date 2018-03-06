@@ -1,0 +1,17 @@
+﻿<div class="tiny" *ngIf="tinyData">
+    <div class="tiny-header" *ngIf="true"><h5>{{widget.graphTitle}}</h5></div>
+    <div class="tiny-body">
+        <div>
+            <div *ngIf="false">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <div class="tiny-content" *ngIf="false">
+                <h5>87,897</h5>
+                <h6>Name</h6>
+            </div>
+            <div>
+                <sparkline [tinyData]="tinyData"></sparkline>
+            </div>
+        </div>
+    </div>
+</div>

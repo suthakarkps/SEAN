@@ -1,0 +1,40 @@
+<!--FILTERS-->
+
+<div *ngIf="enableFilter" class="filters">
+    <filters (refreshGrid)="refreshGrid($event)" [open_filter]="openFilter" [instanceid]="InstanceID" [setenvironment]="SetEnvironment"> </filters>
+</div>
+
+<!--Widgets(Charts)-->
+<!--<div *ngFor='let widget of widgetLists'>
+    <div *ngIf="widget.graphType == 'fixed-column-graph'">
+        <div [ngClass]="[widget.colClassSettings]">
+            <hc-fixed-column [widget]="widget"></hc-fixed-column>
+        </div>
+    </div>
+    <div *ngIf="widget.graphType == 'bar-graph'">
+        <div [ngClass]="[widget.colClassSettings]" class="pointer">
+            <hc-bar [widget]="widget"></hc-bar>
+        </div>
+    </div>
+    <div *ngIf="widget.graphType == 'column-graph'">
+        <div [ngClass]="[widget.colClassSettings]">
+            <hc-column [widget]="widget"></hc-column>
+        </div>
+    </div>
+    <div *ngIf="widget.graphType == 'pie-graph'">
+        <div [ngClass]="[widget.colClassSettings]">
+            <hc-pie [widget]="widget"></hc-pie>
+        </div>
+    </div>
+</div>-->
+
+<!--GRID-->
+<div *ngIf="compliance" class="col-lg-12">
+    <div id="exportExcel" name="exportExcel" (click)="exportExcel()" title="Export Excel" class="btn btn-success exportExcel"><i class="fa fa-file-excel-o" aria-hidden="true"></i></div>
+    <jqxgrid-compliance [gridRefresh]="refreshGridValue" [refreshSpinner]="refreshSpinner" (output_compliance)="output_compliance($event)" (output_compliance_open_filter)="open_filter($event)"></jqxgrid-compliance>
+</div>
+
+<!--Error Handling-->
+<div class="text-center red" *ngIf="serverError">
+    <strong>{{serverErrorMsg}}</strong>
+</div>

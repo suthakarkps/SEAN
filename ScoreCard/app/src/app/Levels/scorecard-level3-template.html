@@ -1,0 +1,8 @@
+﻿   <!--Error Handling-->
+<div class="text-center red" *ngIf="serverError">
+    <strong>{{serverErrorMsg}}</strong>
+</div>
+
+<div class="col-lg-12">
+    <jqxgrid-member-compliance (output_member)="output_member($event)"></jqxgrid-member-compliance>
+</div>

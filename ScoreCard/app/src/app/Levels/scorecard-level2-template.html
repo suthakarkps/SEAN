@@ -1,0 +1,28 @@
+﻿<!--<div  *ngIf="baseMeasureId">   
+    <div *ngFor='let widget of widgetLists'>
+        <div *ngIf="widget.graphType == 'tiny'">
+            <div [ngClass]="[widget.colClassSettings]">
+                <tiny [widget] ="widget" [basemeasureid]="baseMeasureId"></tiny>                
+            </div>
+        </div>       
+        <div *ngIf="widget.graphType == 'grid'">
+            <div [ngClass]="[widget.colClassSettings]">
+                <jqxgrid-ebm [widget] ="widget" [basemeasureid]="baseMeasureId"></jqxgrid-ebm>  
+            </div>
+        </div>    
+        <div >            
+        </div>        
+    </div> 
+
+
+</div>-->
+
+<div *ngIf="physician" class="col-lg-12">
+    <jqxgrid-physician-compliance (output_physician)="output_physician($event)"></jqxgrid-physician-compliance>
+</div>
+
+   <!--Error Handling-->
+
+<div class="text-center red" *ngIf="serverError">
+    <strong>{{serverErrorMsg}}</strong>
+</div>
