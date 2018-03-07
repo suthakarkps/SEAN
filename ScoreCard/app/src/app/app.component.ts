@@ -59,7 +59,7 @@ ngOnInit() {}
         this.level5 = value.level5;
         this.toggleLevel(value);
     }
-
+/*...Toggle...*/
     toggleLevel(value) {
         this.ShowLevel0 = value.ShowLevel0 || "none";
         this.ShowLevel1 = value.ShowLevel1 || "none";
